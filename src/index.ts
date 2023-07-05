@@ -34,7 +34,7 @@ app.get("/products", (req: Request, res: Response) => {
 
 })
 
-app.post("/users", (req:Request, res: Response)=>{
+app.post("/users", (req: Request, res: Response) => {
 
     const id = req.body.id as string
     const name = req.body.name as string
@@ -42,7 +42,7 @@ app.post("/users", (req:Request, res: Response)=>{
     const password = req.body.password as string
     // const createdAt = new Date().toLocaleString("pt-br")
 
-    createUser(id,name,email, password)
+    createUser(id, name, email, password)
 
     // const newUsers : TUsers = {
     //     id,
@@ -56,10 +56,10 @@ app.post("/users", (req:Request, res: Response)=>{
 
     res.status(201).send("Usuário cadatrado com sucesso!")
 
-})  
+})
 
 
-app.post("/products", (req: Request, res: Response)=>{
+app.post("/products", (req: Request, res: Response) => {
     const id = req.body.id as string
     const name = req.body.name as string
     const price = req.body.price as number
@@ -79,3 +79,53 @@ app.post("/products", (req: Request, res: Response)=>{
     res.status(201).send("Produto cadastrado com sucesso!")
 
 })
+
+app.delete("/users/:id", (req: Request, res: Response) => {
+    const findToDelete = req.params.id
+
+    const userIndex = users.findIndex((user) => user.id === findToDelete)
+
+    if (userIndex >= 0) {
+        users.splice(userIndex, 1)
+    }
+
+    res.status(200).send("User apagado com sucesso!!")
+
+})
+
+app.delete("/products/:id", (req: Request, res: Response) => {
+    const findToDelete = req.params.id
+
+    const productIndex = products.findIndex((product) => product.id === findToDelete)
+
+    if (productIndex >= 0) {
+        products.splice(productIndex, 1)
+    }
+
+    res.status(200).send("Produto apagado com sucesso!!")
+
+})
+
+app.put("/products/:id", (req: Request, res: Response) => {
+    const id = req.params.id
+
+    const newId = req.body.id as string | undefined
+    const newName = req.body.name as string | undefined
+    const newPrice = req.body.price as number | undefined
+    const newDescription = req.body.description as string | undefined
+    const newImageUrl = req.body.imageUrl as string | undefined
+
+    const updateProduct = products.find((product) => product.id === id)
+
+    if (updateProduct) {
+        updateProduct.id = newId || updateProduct.id
+        updateProduct.name = newName || updateProduct.name
+        updateProduct.description = newDescription || updateProduct.description
+        updateProduct.imageUrl = newImageUrl || updateProduct.imageUrl
+        updateProduct.price = isNaN(Number(newPrice)) ? updateProduct.price : newPrice as number 
+    }
+
+    res.status(200).send("Produto atualizado com sucesso!!")
+
+})
+
