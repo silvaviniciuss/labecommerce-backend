@@ -26,14 +26,22 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (id, name, price, description, image_url)
-VALUES ('p001', 'Monitor Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400');
-INSERT INTO products (id, name, price, description, image_url)
-VALUES ('p002', 'Mouse Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400');
-INSERT INTO products (id, name, price, description, image_url)
-VALUES ('p003', 'Teclado Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400');
-INSERT INTO products (id, name, price, description, image_url)
-VALUES ('p004', 'Mesa Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400');
-INSERT INTO products (id, name, price, description, image_url)
+VALUES ('p001', 'Monitor Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400'),
+('p002', 'Mouse Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400'),
+VALUES ('p003', 'Teclado Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400'),
+VALUES ('p004', 'Mesa Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400'),
 VALUES ('p005', 'Cadeira Gamer', 1546.99, 'Melhor Monitor do Mercado', 'https://picsum.photos/seed/Mouse%20gamer/400');
 
+SELECT * from users;
 SELECT * FROM products;
+SELECT * FROM products 
+WHERE name LIKE '%gamer%';
+DELETE FROM users WHERE id = 'u001';
+DELETE FROM products WHERE id = 'p001';
+UPDATE products SET 
+name = 'Monitor Gamer UltraScreen',
+price = 3999.99,
+description = description,
+image_url = image_url
+WHERE id = 'p002';
+
