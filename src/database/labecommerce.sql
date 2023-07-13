@@ -44,4 +44,20 @@ price = 3999.99,
 description = description,
 image_url = image_url
 WHERE id = 'p002';
+CREATE TABLE purchases (
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    buyer TEXT NOT NULL,
+    total_price REAL NOT NULL,
+    creat_at TEXT NOT NULL,
+    FOREIGN KEY(buyer) REFERENCES users (id)
+);
+SELECT * from purchases;
+INSERT INTO purchases (id, buyer , total_price, creat_at)
+VALUES
+('c003', 'u003', 596.05, DATETIME('now', 'localtime'));
+UPDATE purchases SET total_price = 800.99 WHERE id = 'c003';
+
+SELECT purchases.id, purchases.buyer, users.name, users.email, purchases.total_price, purchases.creat_at
+FROM purchases INNER JOIN users ON purchases.buyer = users.id;
+
 
