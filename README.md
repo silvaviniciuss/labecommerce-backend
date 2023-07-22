@@ -14,16 +14,16 @@ entre front e back-end.
 
 ## ⚙️ Funcionalidades
  API disponibiliza os seguintes endpoints de conexão com o banco de dados:
-  - [x] getAllUsers - requisão retorna todos os usuários cadastrados no banco de dados.
-  - [x] getAllProducts -requisão retorna todos os produtos cadastrados no banco de dados.
-  - [x] createUser - requisão para a criação de um novo usuário.
-  - [x] createProduct - requisão para a criação de um novo usuário.
-  - [x] deleteUserById - requisão para a exclusão de usuário.
-  - [x] deleteProductById - requisão para a exclusão de produto.
-  - [x] editProductById - requisão para a edição de produto.
-  - [x] createPurchase - requisão para cadastro de uma compra.
-  - [x] getPurchaseById - requisão retorna detalhes da compra.
-  - [x] deletePurchaseById - requisão para o cancelamento da compra.
+  - [x] Get all users - requisão retorna todos os usuários cadastrados no banco de dados.
+  - [x] Get all products -requisão retorna todos os produtos cadastrados no banco de dados.
+  - [x] Create user - requisão para a criação de um novo usuário.
+  - [x] Create product - requisão para a criação de um novo produto.
+  - [x] Delete user by id - requisão para a exclusão de usuário.
+  - [x] Delete product by id - requisão para a exclusão de produto.
+  - [x] Edit product by id - requisão para a edição de produto.
+  - [x] Create purchase - requisão para cadastro de uma compra.
+  - [x] Get purchase by id - requisão retorna detalhes da compra.
+  - [x] Delete purchase by id - requisão para o cancelamento da compra.
 
 ---
 
@@ -36,7 +36,7 @@ Ferramentas que devem ser instaladas para a correta execução da API:
 - [Postman](https://www.postman.com/downloads/) ou a sua versão WEB [PostmanWeb](https://web.postman.co)
 
 Ferramenta para edição de códigos:
--[VSCode](https://code.visualstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
 
 #### 🎲 Rodando a API
 
@@ -74,7 +74,7 @@ Referencie a documentação da [API](https://documenter.getpostman.com/view/2768
 ```
 http://localhost:3003/users
 ```
-Retorna todos os usários cadastrados em um Array de Obejtos [{}].
+Retorna todos os usuários cadastrados em um Array de Obejtos [{}].
 ```
 [
     {
